@@ -1,0 +1,81 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <locale.h>
+
+typedef struct {
+
+int dia, mes,ano;
+
+}Data;
+
+typedef struct {
+
+int id;
+char nome [50];
+char especie [30];
+int idade;
+Data nascimento;
+int prioridade;
+
+}Sistema;
+
+int main (){
+
+setlocale (LC_ALL,"portuguese");
+
+
+Menu ();
+
+
+int Priority;
+
+//Prioridade ();
+
+
+
+
+return 0;
+}
+/*
+int Prioridade (){
+
+printf ("\n\n\t Qual a prioridade do atendimento? \n\t(0- Emergencia, 1- Normal)");
+scanf ("%d", &prioridade.Sistema);
+
+}
+*/
+
+int Menu (){
+
+
+int opcao_menu;
+
+printf ("\t\t\t\t\t\t\t\t\t\t\t\t\n\n\t Menu Inicial:");
+printf ("\t\t\t\t\t\t\t\t\t\t\t\t\n\n\t 1 - Cadastrar Pet");
+printf ("\t\t\t\t\t\t\t\t\t\t\t\t\n\n\t 2 - Atendimento Pet");
+printf ("\t\t\t\t\t\t\t\t\t\t\t\t\n\n\t 3 - Buscar Pet por Id/nome");
+printf ("\t\t\t\t\t\t\t\t\t\t\t\t\n\n\t 4 - Imprimir relatório das filas");
+printf ("\t\t\t\t\t\t\t\t\t\t\t\t\n\n\t 5 - Imprimir próximo Pet");
+printf ("\t\t\t\t\t\t\t\t\t\t\t\t\n\n\t 6 - Imprimir todos os Pets");
+printf ("\t\t\t\t\t\t\t\t\t\t\t\t\n\n\t 7 - Finalizar o sistema\n\n\t");
+
+
+
+
+
+printf ("\t\t\t\t\t\t\t\t\t\t\t\t\n\n\t Escolha Uma opcão para prosseguir: ");
+scanf ("%d",&opcao_menu);
+
+if (opcao_menu<7 && opcao_menu>1){
+
+}
+else {
+
+printf ("\t\t\t\t\t\t\t\t\t\t\t\t\n\n\t Insira um número válido \n\n\t");
+
+}
+
+
+
+}
+
