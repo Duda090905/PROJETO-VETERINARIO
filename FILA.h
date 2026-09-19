@@ -1,7 +1,6 @@
 #ifndef FILA_H_INCLUDED
 #define FILA_H_INCLUDED
 #include <string.h>
-#include <time.h>
 #define y 50
 #define x 30
 
@@ -116,7 +115,7 @@ void imprimeFila (Fila* f)
     printf("\n\t\t");
     for (q=f->ini; q!=NULL; q=q->prox)
     {
-        printf("%d - ",q->info);
+        printf("%d - ",q->info.ID);
     }
     printf("\n");
 }
@@ -142,14 +141,12 @@ Nos* buscaPorID(Nos *L, int ID){
     return NULL;
 }
 
-int rd_ID(Fila *f){
-    srand(time(NULL));
-    int achou=0;
-    int numero_aleatorio = rand() % 1000;
-    for (Nos *p=f->ini; p!=NULL; p=p->prox){
-        if(p->info.ID == numero_aleatorio)  rd_ID;
-    }
-    return numero_aleatorio;
+/* Gera IDs unicos e sequenciais (1, 2, 3...) para todos os pets,
+   independente da fila em que forem cadastrados */
+int proximoID(){
+    static int ultimoID = 0;
+    return ++ultimoID;
 }
 
 #endif // FILA_H_INCLUDED
+
