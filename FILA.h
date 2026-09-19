@@ -4,19 +4,15 @@
 #define y 50
 #define x 30
 
-/* FUN��ES DE MANIPULA��O DE PFILA
+/* FUNÇÕES DA FILA DE PETS
 
-Fila* CriaFila()  CRIA A FILA
-
-int VaziaFila (Fila* f) VERIFICA SE A FILA EST� VAZIA RETORNA 1 QUANDO EST� VAZIA
-
-void InsereFila (Fila* f, int v) INSER��O
-
-int RetiraFila (Fila* f) REMO��O
-
-Fila* liberaFila (Fila* f) LIBERA A FILA
-
-void imprimeFila (Fila* f)IMPRIME A FILA
+Fila* CriaFila()                 cria uma fila vazia
+int VaziaFila(Fila* f)           retorna 1 se a fila estiver vazia
+void insereCadastro(...)         insere um pet no fim da fila
+Nos* RetiraCadastro(Fila* f)     retira o primeiro pet da fila
+Fila* liberaFila(Fila* f)        libera toda a memória da fila
+Nos* buscaPorID(Nos* L, int ID)  busca um pet pelo ID
+int proximoID()                  gera um ID único para cada pet
 */
 typedef struct {
 
@@ -29,7 +25,7 @@ typedef struct {
     char nome[y];
     char especie[x];
     int idade;
-    Data nasc;          /* Data vem do seu FILA.h (dia, mes, ano) */
+    Data nasc;          /* data de nascimento */
     int prioridade;     /* 0 = Emergência, 1 = Normal */
 } Pet;
 
@@ -73,7 +69,7 @@ Nos* ins_fim (Nos *fim, int ID, char nome[], char especie[], int idade, int dia,
     p->info.nasc.ano = ano;
     p->info.prioridade = prioridade;
     p->prox = NULL;
-    if (fim != NULL) /* verifica se lista n�o estava vazia */
+    if (fim != NULL) /* verifica se lista não estava vazia */
     fim->prox = p;
     return p;
 }
@@ -149,4 +145,3 @@ int proximoID(){
 }
 
 #endif // FILA_H_INCLUDED
-
